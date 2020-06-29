@@ -1,6 +1,6 @@
 # Google Software Product Sprint
 
-This repo contains Maliha's portfolio and SPS projects.
+This repo contains Maliha's portfolio and SPS project.
 
 To get started:
 
