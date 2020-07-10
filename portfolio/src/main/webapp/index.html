@@ -2,17 +2,188 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Maliha Bakhshi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfr0j+BmwXdxFgVK/Kvc=" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
   <body>
-    <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
-    </div>
+    <header>
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#work" class="nav-link">My Work</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Qualifications</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="intro" id="home">
+        <h1 class="section-title section-title-intro">
+            Hi, I am <strong>Maliha Bakhshi</strong>
+        </h1>
+        <p class="section-subtitle section-subtitle-intro">Full Stack Web Developer</p>
+        <img src="img/profile.jpg" alt="my picture">
+    </section>
+
+    <section class="about-me" id="about">
+        <h2 class="section-title section-title-about">Who I am</h2>
+        <div class="about-me-body">
+            <p>Hi! My name is Maliha, and I’m a student at Delhi Technological University. 
+                I am a passionate full stack web developer.
+                I beleive on the fact that, success is a journey, not a destination.
+                So keep working hard without caring much about failures.
+            </p>
+        </div>
+        <div class="hobbies">
+            <div class="hobby-description">
+                <h3>Cooking</h3>
+                <p>Recently discovered a new talent of mine. By the way, it was an accidental discovery.</p>
+            </div>
+            <div class="hobby-img">
+                <img src="img/baking.jpg" alt="">
+            </div>
+        </div>
+        <div class="hobbies">
+            <div class="hobby-description">
+                <h3>Coding</h3>
+                <p>It has become a part of my life. I spend almost all my day coding.</p>
+                <h3>Links</h3>
+                <a href="#" class="cta">Leetcode</a><br>
+                <a href="#" class="cta">CodeChef</a><br>
+                <a href="#" class="cta">Hackerearth</a><br>
+            </div>
+            <div class="hobby-img">
+                <img src="img/coding.jpg" alt="">
+            </div>
+        </div>
+        <div class="hobbies">
+            <div class="hobby-description">
+                <h3>Art</h3>
+                <p>I draw portraits, landscapes, cartoon characters and a lot more. 
+                    I've also won many competitions.
+                </p>
+            </div>
+            <div class="hobby-img">
+                <img src="img/drawing.jpg" alt="">
+            </div>
+        </div>
+        <div class="hobbies">
+            <div class="hobby-description">
+                <h3>Hockey</h3>
+                <p>Started playing hockey from 9th standard and have won 2 bronze, 1 silver and 1 gold medal in regional sports meet. 
+                    Also, two times, the team was lead by me.
+                </p>
+            </div>
+            <div class="hobby-img">
+                <img src="img/hockey.jpg" alt="">
+            </div>
+        </div>
+        <div class="hobbies">
+            <div class="hobby-description">
+                <h3>Singing</h3>
+                <p>Started singing from a very young age. 
+                    From singing in school prayer group to singing in front of Ministry of HRD, the journey has been amazing.
+                    Not a trained singer by the way.
+                </p>
+            </div>
+            <div class="hobby-img">
+                <img src="img/singing.jpg" alt="">
+            </div>
+        </div>
+    </section>
+
+   <section class="my-services" id="services">
+       <h2 class="section-title section-title-services">What I do</h2>
+        <div class="services">
+            <div class="service">
+                <h3>Web Design</h3>
+                <p>Have knowledge of JavaScript, CSS, HTML.</p>
+            </div>
+            <div class="service">
+                <h3>Web Development</h3>
+                <p>Have knowledge of JSP and Servlets, R-DBMS.</p>
+                <p>Have an experience of working on Spring Boot.</p>
+            </div>
+        </div>
+
+        <a href="#work" class="btn">My Work</a>
+    </section> 
+
+    <section class="my-work" id="work">
+        <h2 class="section-title">My Work</h2>
+        <p class="section-subtitle"></p>
+
+        <div class="portfolio">
+            <a href="#" class="portfolio-item"></a>
+        </div>
+    </section>
+
+    <section class="my-education" id="education">
+        <h2 class="section-title section-title-qualifications">My Educational Qualifications</h2>
+        <div class="education">
+            <ul>
+                <li class="date" data-date="2018 - Present">
+                    <h3>Delhi Technological University</h3>
+                    <p>Majors in Electrical Engineering with an aggregate GPA of 8.39/10</p>
+                 </li>
+                <li class="date" data-date="2017 - 2018">
+                    <h3>Kendriya Vidyalaya NFC Vigyan Vihar</h3>
+                    <p>Completed 12th Standard in Science Stream with 92.4%</p>
+                </li>
+                <li class="date" data-date="2018 - Present">
+                    <h3>Kendriya Vidyalaya No. 1 Delhi Cantt - 10</h3>
+                    <p>Completed High School with CGPA 10/10</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="contact-me" id="contact">
+        <h2 class="section-title section-title-contact">Want to Work Together</h2>
+        <form action="">
+            <label for="name">Name: </label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required> 
+            <label for="email">Email: </label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required> 
+            <label for="service">Services: </label>
+            <select name="services" id="service">
+                <option value="">Web Design</option>
+                <option value="">Web Development</option>
+                <option value="">Web Design/Development</option>
+            </select>
+            <label for="subject">Subject: </label>
+            <textarea name="subject" id="subject" cols="10" rows="10"></textarea>
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+    <footer class="copyright">
+        <div class="up" id="up">
+            <i class="fas fa-chevron-up"></i>
+            <p>&copy; 2020 Maliha Bakhshi</p>
+        </div>
+    </footer>
+
   </body>
 </html>
