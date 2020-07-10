@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Google Software Product Sprint
 
 This repo contains Maliha's portfolio and SPS project.
@@ -10,3 +11,6 @@ To get started:
   - If the tutorial panel does not open or display the walkthrough contents, try refreshing the page.
 
 Then follow the on-screen instructions to set up your repo.
+=======
+# My-Portfolio
+>>>>>>> e1e6d15990acb4d6a16e7d0c95172ef2943d279f
