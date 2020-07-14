@@ -15,23 +15,29 @@
 /**
  * Adds a random greeting to the page.
  */
-$(document).ready(function(){
-    const navToggle=document.querySelector('.nav-toggle');
-    const navLinks=document.querySelectorAll('.nav-link');
 
-    navToggle.addEventListener('click', function(){
+async function getRandomQuoteUsingAsyncAwait() {
+    const response = await fetch('/data');
+    const quote = await response.text();
+    document.getElementById('random-quote').innerText = quote;
+}
+$(document).ready(function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navToggle.addEventListener('click', function() {
         document.body.classList.toggle('nav-open');
     });
 
     navLinks.forEach(link => {
-        link.addEventListener('click', function(){
+        link.addEventListener('click', function() {
             document.body.classList.remove('nav-open');
         });
     });
 
-    $('#up').on('click', function(){
+    $('#up').on('click', function() {
         $('html, body').animate({
-            scrollTop:0
+            scrollTop: 0
         }, 2000)
     });
 
@@ -41,4 +47,3 @@ $(document).ready(function(){
         once: true
     });
 });
-

@@ -87,6 +87,19 @@ p {
     font-size: 2rem;
 }
 
+.content {
+    margin-top: 2rem;
+    text-align: center
+}
+
+.btn {
+    background: rgba(252, 247, 247, 0.404);
+    color: #000000;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: var(--fw-bold);
+}
+
 .container {
     width: 90%;
     max-width: 120rem;
@@ -704,13 +717,13 @@ form label {
 }
 
 input,
-select,
 textarea {
     width: 100%;
     padding: 1rem;
     margin-bottom: 5px;
     border: none;
     outline-color: var(--clr-dark);
+    color: rgb(0, 0, 0);
 }
 
 ::placeholder {
