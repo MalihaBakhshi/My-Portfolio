@@ -16,11 +16,27 @@
  * Adds a random greeting to the page.
  */
 
-async function getRandomQuoteUsingAsyncAwait() {
-    const response = await fetch('/data');
-    const quote = await response.text();
-    document.getElementById('random-quote').innerText = quote;
+function getComments() {
+  fetch('/data').then(response => response.json()).then((comments) => {
+
+    const commentsListElement = document.getElementById('comment-container');
+    commentsListElement.innerHTML = '';
+    commentsListElement.appendChild(
+        createListElement('Comment 1: ' + comments[0]));
+    commentsListElement.appendChild(
+        createListElement('Comment 2: ' + comments[1]));
+    commentsListElement.appendChild(
+        createListElement('Comment 3: ' + comments[2]));
+  });
 }
+
+/** Creates an <li> element containing text. */
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
+}
+
 $(document).ready(function() {
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelectorAll('.nav-link');
