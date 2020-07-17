@@ -12,35 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/**
- * Adds a random greeting to the page.
- */
-
-function getComments() {
-  fetch('/data').then(response => response.json()).then((comments) => {
-
-    const commentsListElement = document.getElementById('comment-container');
-    commentsListElement.innerHTML = '';
-    commentsListElement.appendChild(
-        createListElement('Comment 1: ' + comments[0]));
-    commentsListElement.appendChild(
-        createListElement('Comment 2: ' + comments[1]));
-    commentsListElement.appendChild(
-        createListElement('Comment 3: ' + comments[2]));
-  });
-}
-
-/** Creates an <li> element containing text. */
-function createListElement(text) {
-  const liElement = document.createElement('li');
-  liElement.innerText = text;
-  return liElement;
-}
+ function getComments() {
+    fetch('/data').then(response => response.json()).then((comments) => {
+        for(var i=0;i<comments.length;i++){
+            var html ="<p> Name: " +comments[i].username+"<br> Comment: " + comments[i].comment + "</p><hr>";
+            $('#comment_container').append(html);
+        }
+        });
+    }
 
 $(document).ready(function() {
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelectorAll('.nav-link');
-
     navToggle.addEventListener('click', function() {
         document.body.classList.toggle('nav-open');
     });
@@ -62,4 +45,5 @@ $(document).ready(function() {
         duration: 1800,
         once: true
     });
+
 });
