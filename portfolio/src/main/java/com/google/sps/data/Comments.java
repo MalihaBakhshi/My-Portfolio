@@ -20,10 +20,14 @@ public final class Comments {
   private final long id;
   private final String username;
   private final String comment;
+  private final long timestamp;
+  private final String userid;
 
-  public Comments(long id, String username, String comment) {
+  public Comments(long id, String username, String comment, Long timestamp, String userid) {
     this.id = id;
     this.username = username;
     this.comment = comment;
+    this.timestamp = timestamp;
+    this.userid=userid;
   }
 }

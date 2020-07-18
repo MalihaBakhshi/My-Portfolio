@@ -38,16 +38,24 @@ public class DataServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        Query query = new Query("Comments");
+        
+        response.sendRedirect("/");
+
+        Query query = new Query("Comments").addSort("timestamp", SortDirection.DESCENDING);
 
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+        
         PreparedQuery results = datastore.prepare(query);
+        
         List<Comments> comments = new ArrayList<>();
+        
         for (Entity entity : results.asIterable()) {
         long id = entity.getKey().getId();
         String username = (String) entity.getProperty("username");
         String comment = (String) entity.getProperty("comment");
-        Comments currentComment = new Comments(id, username, comment);
+        long timestamp = (long) entity.getProperty("timestamp");
+        String userid = (String) entity.getProperty("userid");
+        Comments currentComment = new Comments(id, username, comment, timestamp, userid);
         comments.add(currentComment);
         }
 
@@ -59,11 +67,17 @@ public class DataServlet extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String comment = getParameter(request,"comment", "");
+        
+        String comment = request.getParameter("comment");
         String username = getParameter(request,"username", "");
+        long timestamp = System.currentTimeMillis();
+        String userid = getParameter(request,"userid", "");
+
         Entity commentEntity = new Entity("Comments");
         commentEntity.setProperty("username", username);
         commentEntity.setProperty("comment", comment);
+        commentEntity.setProperty("timestamp", timestamp);
+        commentEntity.setProperty("userid", userid);
 
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
         datastore.put(commentEntity);
