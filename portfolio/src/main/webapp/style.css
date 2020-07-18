@@ -145,7 +145,6 @@ p {
 }
 
 header {
-    text-align: right;
     padding: 1.5em;
 }
 
@@ -783,6 +782,60 @@ input[type="submit"]:hover {
     background-color: var(--clr-accent);
 }
 
+#seecomments {
+    font-size: 2.25rem;
+    width: initial;
+    background-color: var(--clr-light);
+    color: rgb(0, 0, 0);
+    border-radius: .8rem;
+    transition: color 200ms;
+    transition: transform 200ms ease-in-out;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+#login {
+    font-size: 2.25rem;
+    width: initial;
+    background-color: var(--clr-light);
+    color: rgb(0, 0, 0);
+    padding: 1rem 2rem;
+    border-radius: .8rem;
+    transition: color 200ms;
+    transition: transform 200ms ease-in-out;
+    cursor: pointer;
+}
+
+#logout {
+    font-size: 2.25rem;
+    width: initial;
+    background-color: var(--clr-light);
+    color: rgb(0, 0, 0);
+    padding: 1rem 2rem;
+    border-radius: .8rem;
+    transition: color 200ms;
+    transition: transform 200ms ease-in-out;
+    cursor: pointer;
+}
+
+#login:hover {
+    transform: scale(1.1);
+    color: var(--clr-accent);
+    background-color: var(--clr-dark);
+}
+
+#logout:hover {
+    transform: scale(1.1);
+    color: var(--clr-accent);
+    background-color: var(--clr-dark);
+}
+
+#seecomments:hover {
+    transform: scale(1.1);
+    background-color: var(--clr-dark);
+    color: var(--clr-accent);
+}
+
 .comments textarea {
     margin-top: 3rem;
     margin-bottom: 2rem;
@@ -802,8 +855,8 @@ input[type="submit"]:hover {
 .comments input[type="submit"] {
     font-size: 2.25rem;
     width: initial;
-    background-color: var(--clr-accent);
-    color: var(--clr-dark);
+    background-color: var(--clr-light);
+    color: #000000;
     padding: 1rem 2rem;
     border-radius: .8rem;
     cursor: pointer;
@@ -812,8 +865,8 @@ input[type="submit"]:hover {
 }
 
 .comments input[type="submit"]:hover {
-    color: var(--clr-dark);
-    background-color: var(--clr-light);
+    color: var(--clr-accent);
+    background-color: var(--clr-dark);
     transform: scale(1.1);
 }
 
@@ -840,6 +893,7 @@ input[type="submit"]:hover {
 
 .comment-section {
     margin-top: 3rem;
+    padding: 10rem;
 }
 
 .copyright {

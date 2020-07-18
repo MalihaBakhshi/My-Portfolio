@@ -12,18 +12,28 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
- function getComments() {
-    fetch('/data').then(response => response.json()).then((comments) => {
-        for(var i=0;i<comments.length;i++){
-            var html ="<p> Name: " +comments[i].username+"<br> Comment: " + comments[i].comment + "</p><hr>";
+function getComments() {
+    fetch('/loginstatus').then(response => response.text()).then((loginstatus) => {
+        if (loginstatus.substr(26, 5) == "Login") {
+            $('#comments').hide();
+            $('#logout').hide();
+        }
+        else {
+            $('#login').hide();
+            fetch('/data').then(response => response.json()).then((comments) => {
+            for (var i = 0; i < comments.length; i++) {
+            var html = "<p> Name: " + comments[i].username + "<br> Comment: " + comments[i].comment + "</p><hr>";
             $('#comment_container').append(html);
         }
-        });
-    }
+    });
+        }
+    });
+}
 
 $(document).ready(function() {
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelectorAll('.nav-link');
+
     navToggle.addEventListener('click', function() {
         document.body.classList.toggle('nav-open');
     });
