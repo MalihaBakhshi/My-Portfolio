@@ -25,6 +25,7 @@ import com.google.appengine.api.datastore.PreparedQuery;
 import com.google.appengine.api.datastore.Query;
 import com.google.appengine.api.datastore.Query.SortDirection;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpSession;
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
@@ -38,8 +39,6 @@ public class DataServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        
-        response.sendRedirect("/");
 
         Query query = new Query("Comments").addSort("timestamp", SortDirection.DESCENDING);
 
@@ -56,6 +55,7 @@ public class DataServlet extends HttpServlet {
         long timestamp = (long) entity.getProperty("timestamp");
         String userid = (String) entity.getProperty("userid");
         Comments currentComment = new Comments(id, username, comment, timestamp, userid);
+
         comments.add(currentComment);
         }
 
@@ -71,7 +71,8 @@ public class DataServlet extends HttpServlet {
         String comment = request.getParameter("comment");
         String username = getParameter(request,"username", "");
         long timestamp = System.currentTimeMillis();
-        String userid = getParameter(request,"userid", "");
+        HttpSession session = request.getSession();
+        String userid = (String)session.getAttribute("userid");
 
         Entity commentEntity = new Entity("Comments");
         commentEntity.setProperty("username", username);

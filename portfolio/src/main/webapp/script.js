@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-function getComments() {
+function login() {
     fetch('/loginstatus').then(response => response.text()).then((loginstatus) => {
         if (loginstatus.substr(26, 5) == "Login") {
             $('#comments').hide();
@@ -20,12 +20,18 @@ function getComments() {
         }
         else {
             $('#login').hide();
-            fetch('/data').then(response => response.json()).then((comments) => {
-            for (var i = 0; i < comments.length; i++) {
-            var html = "<p> Name: " + comments[i].username + "<br> Comment: " + comments[i].comment + "</p><hr>";
-            $('#comment_container').append(html);
         }
     });
+}
+
+function getComments() {
+    console.log("a");
+        fetch('/data').then(response => response.json()).then((comments) => {
+            console.log(comments.length);
+        for (var i = 0; i < comments.length; i++) {
+            console.log(comments[i]);
+        var html = "<p> Name: " + comments[i].username + "<br> Comment: " + comments[i].comment + "</p><hr>";
+                $('#comment_container').append(html);
         }
     });
 }
