@@ -18,7 +18,7 @@ function loadComments() {
     fetch('/data').then(response => response.json()).then((comments) => {
         var j=count
         for(;j<Math.min(comments.length,count+5);j++){
-            var html = "<p> User: " + comments[j].username + "<br> Comment: " + comments[j].comment + "</p><hr>";
+            var html = "<p> Name: " + comments[j].username + "<br> Comment: " + comments[j].comment + "</p><hr>";
             $('#comment_container').append(html);
         }
         count=j;
