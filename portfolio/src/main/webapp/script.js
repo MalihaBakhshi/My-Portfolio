@@ -44,10 +44,10 @@ function getComments() {
         if (loginstatus.substr(26, 5) == "Login") {
             $('#comments').hide();
             $('#commentlink').hide();
-            $('#logout').hide();
+            $('#login').show();
         }
         else {
-            $('#login').hide();
+            $('#logout').show();
             let container = document.querySelector("#comment_container");
             container.innerHTML = '';
             fetch('/data').then(response => response.json()).then((comments) => {

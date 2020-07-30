@@ -803,6 +803,7 @@ input[type="submit"]:hover {
     border-radius: .8rem;
     transition: color 200ms;
     transition: transform 200ms ease-in-out;
+    display: none;
     cursor: pointer;
 }
 
@@ -815,6 +816,7 @@ input[type="submit"]:hover {
     border-radius: .8rem;
     transition: color 200ms;
     transition: transform 200ms ease-in-out;
+    display: none;
     cursor: pointer;
 }
 
